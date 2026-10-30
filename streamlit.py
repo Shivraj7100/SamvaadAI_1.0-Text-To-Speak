@@ -10,7 +10,7 @@ from sarvamai import SarvamAI
 # Page config
 # ---------------------------------------------------------------------------
 st.set_page_config(
-    page_title="Bharat Voice · Indian Language TTS",
+    page_title="samvaadAI_1.0",
     page_icon="🎙️",
     layout="centered",
     initial_sidebar_state="expanded",
@@ -84,16 +84,16 @@ LANGUAGES = {
 }
 
 SAMPLES = {
-    "hi-IN": "नमस्ते! आपका स्वागत है। यह एक एआई द्वारा बनाई गई आवाज़ है।",
-    "ta-IN": "வணக்கம்! உங்களை வரவேற்கிறோம். இது ஒரு செயற்கை நுண்ணறிவு குரல்.",
-    "te-IN": "నమస్కారం! మీకు స్వాగతం. ఇది ఏఐ రూపొందించిన స్వరం.",
-    "bn-IN": "নমস্কার! আপনাকে স্বাগতম। এটি একটি এআই-তৈরি কণ্ঠস্বর।",
-    "mr-IN": "नमस्कार! तुमचे स्वागत आहे. हा एआय ने तयार केलेला आवाज आहे.",
-    "gu-IN": "નમસ્તે! તમારું સ્વાગત છે. આ એઆઈ દ્વારા બનાવેલ અવાજ છે.",
-    "kn-IN": "ನಮಸ್ಕಾರ! ನಿಮಗೆ ಸ್ವಾಗತ. ಇದು ಎಐ ರಚಿಸಿದ ಧ್ವನಿ.",
-    "ml-IN": "നമസ്കാരം! സ്വാഗതം. ഇത് എഐ നിർമ്മിച്ച ശബ്ദമാണ്.",
-    "pa-IN": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਇਹ ਏਆਈ ਦੁਆਰਾ ਬਣੀ ਆਵਾਜ਼ ਹੈ।",
-    "en-IN": "Hello! Welcome. This is an AI generated voice.",
+    "hi-IN": "नमस्ते! आपका स्वागत है। यह एक सिंथेसाइज़्ड आवाज़ का नमूना है।",
+    "ta-IN": "வணக்கம்! உங்களை வரவேற்கிறோம். இது ஒரு தொகுக்கப்பட்ட குரல் மாதிரி.",
+    "te-IN": "నమస్కారం! మీకు స్వాగతం. ఇది సంశ్లేషణ చేయబడిన వాయిస్ నమూనా.",
+    "bn-IN": "নমস্কার! আপনাকে স্বাগতম। এটি একটি সংশ্লেষিত কণ্ঠস্বরের নমুনা।",
+    "mr-IN": "नमस्कार! तुमचे स्वागत आहे. हा संश्लेषित आवाज नमुना आहे.",
+    "gu-IN": "નમસ્તે! તમારું સ્વાગત છે. આ સંશ્લેષિત અવાજનું નમૂનો છે.",
+    "kn-IN": "ನಮಸ್ಕಾರ! ನಿಮಗೆ ಸ್ವಾಗತ. ಇದು ಸಂಶ್ಲೇಷಿತ ಧ್ವನಿಯ ಮಾದರಿ.",
+    "ml-IN": "നമസ്കാരം! സ്വാഗതം. ഇത് ഒരു സമന്വയിപ്പിച്ച ശബ്ദത്തിന്റെ മാതൃകയാണ്.",
+    "pa-IN": "ਸਤ ਸ੍ਰੀ ਅਕਾਲ! ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ। ਇਹ ਇੱਕ ਸੰਸ਼ਲੇਸ਼ਿਤ ਆਵਾਜ਼ ਦਾ ਨਮੂਨਾ ਹੈ।",
+    "en-IN": "Hello! Welcome. This is a synthesized voice sample.",
 }
 
 MODEL = "bulbul:v4-flash"
@@ -199,13 +199,13 @@ with st.sidebar:
         st.rerun()
 
     st.divider()
-    st.markdown("**💡 Tips**")
-    st.caption(
-        "• Use proper punctuation for natural pauses.\n\n"
-        "• Long text is split automatically.\n\n"
-        "• Match the text script to the chosen language."
-    )
-    st.caption("Powered by Sarvam AI · Built with Streamlit")
+    # st.markdown("**Tips**")
+    # st.caption(
+    #     "• Use proper punctuation for natural pauses.\n\n"
+    #     "• Long text is split automatically.\n\n"
+    #     "• Match the text script to the chosen language."
+    # )
+    # st.caption("Powered by Sarvam AI")
 
 # ---------------------------------------------------------------------------
 # Hero
@@ -213,13 +213,8 @@ with st.sidebar:
 st.markdown(
     """
     <div class="hero">
-        <h1>🎙️ Bharat Voice</h1>
-        <p>Turn any text into natural-sounding speech in 10 Indian languages.</p>
-        <div class="badges">
-            <span class="badge">10 languages</span>
-            <span class="badge">Long-text support</span>
-            <span class="badge">MP3 download</span>
-        </div>
+        <h1>Indian Language Text-to-Speech</h1>
+        <p>Convert written content into clear, natural-sounding speech across 10 Indian languages.</p>
     </div>
     """,
     unsafe_allow_html=True,
@@ -228,7 +223,7 @@ st.markdown(
 # ---------------------------------------------------------------------------
 # Input tabs
 # ---------------------------------------------------------------------------
-tab_type, tab_file = st.tabs(["✍️ Type or paste", "📄 Upload .txt file"])
+tab_type, tab_file = st.tabs(["Type or paste", "Upload .txt file"])
 
 with tab_type:
     st.text_area(
@@ -238,7 +233,7 @@ with tab_type:
         height=180,
         label_visibility="collapsed",
     )
-    if st.button("🧹 Clear text"):
+    if st.button("Clear text"):
         st.session_state.text_input = ""
         st.rerun()
 
@@ -270,8 +265,8 @@ for col, val, lbl in [
     col.markdown(f'<div class="stat"><b>{val}</b><span>{lbl}</span></div>', unsafe_allow_html=True)
 
 st.write("")
-st.caption(f"🌐 Output language: **{lang_label}**")
-generate = st.button("🔊 Generate Speech", type="primary")
+st.caption(f"Output language: **{lang_label}**")
+generate = st.button("Generate Speech", type="primary")
 
 # ---------------------------------------------------------------------------
 # Generate
@@ -323,7 +318,7 @@ if generate:
 # ---------------------------------------------------------------------------
 if st.session_state.history:
     latest = st.session_state.history[0]
-    st.markdown("### 🎧 Your audio")
+    st.markdown("### Your audio")
     preview = latest["text"][:220] + ("…" if len(latest["text"]) > 220 else "")
     st.markdown(
         f'<div class="card"><span class="chip">{latest["lang"]}</span>'
@@ -333,11 +328,11 @@ if st.session_state.history:
         unsafe_allow_html=True,
     )
     st.audio(latest["audio"], format="audio/mp3")
-    st.download_button("⬇️ Download MP3", data=latest["audio"],
+    st.download_button("Download MP3", data=latest["audio"],
                        file_name="bharat_voice.mp3", mime="audio/mp3", key="dl_latest")
 
     if len(st.session_state.history) > 1:
-        with st.expander(f"🕘 Previous generations ({len(st.session_state.history) - 1})"):
+        with st.expander(f"Previous generations ({len(st.session_state.history) - 1})"):
             for i, item in enumerate(st.session_state.history[1:], start=1):
                 st.markdown(
                     f'<span class="chip">{item["lang"]}</span><span class="chip">{item["time"]}</span>',
@@ -349,5 +344,5 @@ if st.session_state.history:
                                    file_name=f"bharat_voice_{i}.mp3", mime="audio/mp3", key=f"dl_{i}")
                 st.divider()
 else:
-    st.info("👈 Pick a language, enter text (or upload a file), then hit **Generate Speech**. "
-            "Try *Load sample text* in the sidebar.")
+    st.info("Select a language, enter text or upload a file, and then click **Generate Speech**. "
+            "You can also use the sample text option in the sidebar.")
